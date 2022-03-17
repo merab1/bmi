@@ -1,13 +1,13 @@
 class BmiLogic {
-  int weight;
-  int height;
+  int? weight;
+  int? height;
 
-  BmiLogic({required this.weight, required this.height});
+  BmiLogic({this.weight, this.height});
 
   var _bmi;
 
   String bmiResult() {
-    _bmi = weight/(height*height);
+    _bmi = weight!/(height!*height!);
     return _bmi.toStringAsFixed(2);
   }
 

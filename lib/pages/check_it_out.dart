@@ -1,3 +1,4 @@
+import 'package:bmi/models/bmi_logic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,12 @@ class CheckItOut extends StatefulWidget {
 
 class _CheckItOutState extends State<CheckItOut> {
   TextEditingController textEditingController = TextEditingController();
+  BmiLogic bmiLogic = BmiLogic();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,6 +50,9 @@ class _CheckItOutState extends State<CheckItOut> {
               width: 200,
               height: 50,
               child: TextField(
+            //    key: Key,
+                readOnly: true,
+                // enabled: false,
                 controller: textEditingController,
                 maxLines: 1,
                 style: TextStyle(
@@ -82,6 +89,8 @@ class _CheckItOutState extends State<CheckItOut> {
                   width: 200,
                   height: 50,
                   child: TextField(
+                    readOnly: true,
+                    //  enabled: false,
                     controller: textEditingController,
                     maxLines: 1,
                     style: TextStyle(
@@ -150,7 +159,6 @@ class _CheckItOutState extends State<CheckItOut> {
             Center(
               child: digitsWidget(0),
             ),
-
           ],
         ),
       ),
