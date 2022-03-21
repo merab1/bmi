@@ -1,4 +1,4 @@
-import 'package:bmi/pages/check_it_out.dart';
+import 'package:bmi/pages/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class BmiApp extends StatelessWidget {
     return MaterialApp(
       title: 'BMI App',
       theme: ThemeData(scaffoldBackgroundColor: Colors.grey.shade800),
-      home: CheckItOut(),
+      home: Home(),
     );
   }
 }

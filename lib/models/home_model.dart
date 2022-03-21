@@ -1,10 +1,10 @@
-class BmiLogic {
-  int? weight;
-  int? height;
+class HomeModel {
+  int weight;
+  int height;
 
-  BmiLogic({this.weight, this.height});
+  HomeModel({ required this.weight, required this.height});
 
-  var _bmi;
+/*  var _bmi;
 
   String bmiResult() {
     _bmi = weight!/(height!*height!);
@@ -19,5 +19,5 @@ class BmiLogic {
     } else {
       return 'What the hell? no one gives you a food?';
     }
-  }
+  }*/
 }

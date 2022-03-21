@@ -1,19 +1,20 @@
-import 'package:bmi/models/bmi_logic.dart';
+import 'package:bmi/models/home_model.dart';
+import 'package:bmi/pages/result_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/digits_widget.dart';
 
-class CheckItOut extends StatefulWidget {
-  const CheckItOut({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<CheckItOut> createState() => _CheckItOutState();
+  State<Home> createState() => _HomeState();
 }
 
-class _CheckItOutState extends State<CheckItOut> {
+class _HomeState extends State<Home> {
   TextEditingController textEditingController = TextEditingController();
-  BmiLogic bmiLogic = BmiLogic();
+ // HomeModel bmiLogic = HomeModel();
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +120,9 @@ class _CheckItOutState extends State<CheckItOut> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+                    },
                     child: Text(
                       'DONE',
                       style: TextStyle(

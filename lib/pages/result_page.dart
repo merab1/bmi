@@ -8,7 +8,7 @@ class ResultPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          'your BMI is $bmi, $advice',
+          'your BMI is' //$bmi, $advice',
         ),
       ),
     );
