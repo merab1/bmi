@@ -15,6 +15,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   TextEditingController textEditingController = TextEditingController();
  // HomeModel bmiLogic = HomeModel();
+  int weight = 1;
+  int height = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +123,11 @@ class _HomeState extends State<Home> {
                   ),
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+                      HomeModel homeModel = HomeModel(weight: weight, height: height);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(
+                        bmiResult: homeModel.bmiResult(),
+                        advice: homeModel.advice(),
+                      )));
                     },
                     child: Text(
                       'DONE',
