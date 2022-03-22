@@ -7,7 +7,7 @@ class HomeModel {
   var _bmi;
 
   String bmiResult() {
-    _bmi = weight/ (height* height);
+    _bmi = (weight/ (height* height))*10000;
     return _bmi.toStringAsFixed(2);
   }
 

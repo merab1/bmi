@@ -13,10 +13,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  TextEditingController textEditingController = TextEditingController();
- // HomeModel bmiLogic = HomeModel();
-  int weight = 1;
-  int height = 1;
+  TextEditingController textWeightController = TextEditingController();
+  TextEditingController textHeightController = TextEditingController();
+
+  // HomeModel bmiLogic = HomeModel();
+  int weight = 0;
+  int height = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +56,12 @@ class _HomeState extends State<Home> {
               width: 200,
               height: 50,
               child: TextField(
-            //    key: Key,
-                readOnly: true,
+                //    key: Key,
+                //    readOnly: true,
                 // enabled: false,
-                controller: textEditingController,
+
+                controller: textWeightController,
+                keyboardType: TextInputType.number,
                 maxLines: 1,
                 style: TextStyle(
                   color: Colors.white,
@@ -92,15 +97,16 @@ class _HomeState extends State<Home> {
                   width: 200,
                   height: 50,
                   child: TextField(
-                    readOnly: true,
+                    keyboardType: TextInputType.number,
+                    //    readOnly: true,
                     //  enabled: false,
-                    controller: textEditingController,
+                    controller: textHeightController,
                     maxLines: 1,
                     style: TextStyle(
                       color: Colors.white,
                     ),
                     decoration: InputDecoration(
-                      suffixText: 'm',
+                      suffixText: 'cm',
                       suffixStyle: TextStyle(
                         color: Colors.grey.shade700,
                       ),
@@ -123,11 +129,20 @@ class _HomeState extends State<Home> {
                   ),
                   child: TextButton(
                     onPressed: () {
-                      HomeModel homeModel = HomeModel(weight: weight, height: height);
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(
-                        bmiResult: homeModel.bmiResult(),
-                        advice: homeModel.advice(),
-                      )));
+                      String controllerWeightInfo = textWeightController.text;
+                      weight = int.parse(controllerWeightInfo);
+                      String controllerHeightInfo = textHeightController.text;
+                      height = int.parse(controllerHeightInfo);
+                      HomeModel homeModel = HomeModel(
+                          weight: weight,
+                          height: height);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResultPage(
+                                    bmiResult: homeModel.bmiResult(),
+                                    advice: homeModel.advice(),
+                                  )));
                     },
                     child: Text(
                       'DONE',

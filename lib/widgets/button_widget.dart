@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-Widget ButtonWidget(String label, Function onPressed) {
+Widget ButtonWidget(String label /*Function onPressed*/) {
   Container(
     width: 100,
     decoration: BoxDecoration(
@@ -11,7 +11,7 @@ Widget ButtonWidget(String label, Function onPressed) {
     ),
     child: TextButton(
       onPressed: () {
-        //Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
       },
       child: Text(
         'DONE',
