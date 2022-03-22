@@ -16,13 +16,13 @@ class ResultPage extends StatelessWidget {
             Text(
               'your BMI is: $bmiResult, \n\n$advice',
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 200,
             ),
             Container(
@@ -32,7 +32,7 @@ class ResultPage extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: Text(
+                child: const Text(
                   'Go Back',
                   style: TextStyle(
                     color: Colors.white,

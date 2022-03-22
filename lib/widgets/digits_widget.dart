@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 Widget digitsWidget(int digit, Function buttonPressed) {
 
@@ -9,7 +8,7 @@ return TextButton(
   },
   child: Text(
     '$digit',
-    style: TextStyle(
+    style: const TextStyle(
 color: Colors.white,
       fontSize: 30,
     ),

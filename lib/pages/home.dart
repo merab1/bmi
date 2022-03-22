@@ -1,6 +1,5 @@
 import 'package:bmi/models/home_model.dart';
 import 'package:bmi/pages/result_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/digits_widget.dart';
@@ -53,7 +52,7 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
+            const Center(
               heightFactor: 7,
               child: Text(
                 "LET'S CHECK IT OUT",
@@ -64,8 +63,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(50, 20, 0, 10),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(50, 20, 0, 10),
               child: Text(
                 'Your weight',
                 style: TextStyle(
@@ -76,7 +75,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 50),
+              padding: const EdgeInsets.only(left: 50),
               width: 200,
               height: 50,
               child: TextField(
@@ -87,7 +86,7 @@ class _HomeState extends State<Home> {
                 controller: textWeightController,
                 keyboardType: TextInputType.number,
                 maxLines: 1,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ),
                 decoration: InputDecoration(
@@ -103,8 +102,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(50, 20, 0, 10),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(50, 20, 0, 10),
               child: Text(
                 'Your height',
                 style: TextStyle(
@@ -117,7 +116,7 @@ class _HomeState extends State<Home> {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 50),
+                  padding: const EdgeInsets.only(left: 50),
                   width: 200,
                   height: 50,
                   child: TextField(
@@ -127,7 +126,7 @@ class _HomeState extends State<Home> {
                     //  enabled: false,
                     controller: textHeightController,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                     ),
                     decoration: InputDecoration(
@@ -143,7 +142,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 25,
                 ),
                 Container(
@@ -171,7 +170,7 @@ class _HomeState extends State<Home> {
                                     advice: homeModel.advice(),
                                   )));
                     },
-                    child: Text(
+                    child: const Text(
                       'DONE',
                       style: TextStyle(
                         color: Colors.white,
@@ -181,7 +180,7 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Table(
