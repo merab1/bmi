@@ -20,6 +20,10 @@ class _HomeState extends State<Home> {
   int weight = 0;
   int height = 0;
 
+  void printDigits(int digit) {
+    textWeightController = digit as TextEditingController;
+    textHeightController = digit as TextEditingController;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,6 +137,8 @@ class _HomeState extends State<Home> {
                       weight = int.parse(controllerWeightInfo);
                       String controllerHeightInfo = textHeightController.text;
                       height = int.parse(controllerHeightInfo);
+                      textWeightController.clear();
+                      textHeightController.clear();
                       HomeModel homeModel = HomeModel(
                           weight: weight,
                           height: height);
@@ -161,27 +167,27 @@ class _HomeState extends State<Home> {
               children: [
                 TableRow(
                   children: [
-                    digitsWidget(1),
-                    digitsWidget(2),
-                    digitsWidget(3),
+                    digitsWidget(1, printDigits),
+                    digitsWidget(2, printDigits),
+                    digitsWidget(3, printDigits),
                   ],
                 ),
                 TableRow(children: [
-                  digitsWidget(4),
-                  digitsWidget(5),
-                  digitsWidget(6),
+                  digitsWidget(4, printDigits),
+                  digitsWidget(5, printDigits),
+                  digitsWidget(6, printDigits),
                 ]),
                 TableRow(
                   children: [
-                    digitsWidget(7),
-                    digitsWidget(8),
-                    digitsWidget(9),
+                    digitsWidget(7, printDigits),
+                    digitsWidget(8, printDigits),
+                    digitsWidget(9, printDigits),
                   ],
                 ),
               ],
             ),
             Center(
-              child: digitsWidget(0),
+              child: digitsWidget(0, printDigits),
             ),
           ],
         ),

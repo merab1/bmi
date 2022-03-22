@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-Widget digitsWidget(int digit, /*Function callBack*/) {
-  final buttonPressed;
+Widget digitsWidget(int digit, Function buttonPressed) {
+
 return TextButton(
   onPressed: () {
-   // textEditingController = digit as TextEditingController;
-//callBack('$digit');
+    buttonPressed(digit);
   },
   child: Text(
     '$digit',
