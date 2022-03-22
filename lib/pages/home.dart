@@ -21,8 +21,9 @@ class _HomeState extends State<Home> {
   int height = 0;
 
   void printDigits(int digit) {
-    textWeightController = digit as TextEditingController;
-    textHeightController = digit as TextEditingController;
+
+  textWeightController.text += digit.toString();
+  textHeightController.text += digit.toString();
   }
 
   @override
@@ -63,7 +64,6 @@ class _HomeState extends State<Home> {
                 //    key: Key,
                 //    readOnly: true,
                 // enabled: false,
-
                 controller: textWeightController,
                 keyboardType: TextInputType.number,
                 maxLines: 1,
