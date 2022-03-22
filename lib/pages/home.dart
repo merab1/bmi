@@ -16,14 +16,33 @@ class _HomeState extends State<Home> {
   TextEditingController textWeightController = TextEditingController();
   TextEditingController textHeightController = TextEditingController();
 
+  FocusNode weightFocusNode = FocusNode();
+  FocusNode heightFocusNode = FocusNode();
+
   // HomeModel bmiLogic = HomeModel();
   int weight = 0;
   int height = 0;
 
   void printDigits(int digit) {
+    if(weightFocusNode.hasFocus) {
+      textWeightController.text += digit.toString();
+    } else if(heightFocusNode.hasFocus) {
+      textHeightController.text += digit.toString();
+    }
+  }
 
-  textWeightController.text += digit.toString();
-  textHeightController.text += digit.toString();
+/*  @override
+  void initState() {
+    weightFocusNode = FocusNode();
+    heightFocusNode = FocusNode();
+    super.initState();
+  }*/
+
+  @override
+  void dispose() {
+    weightFocusNode.dispose();
+    heightFocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -61,8 +80,9 @@ class _HomeState extends State<Home> {
               width: 200,
               height: 50,
               child: TextField(
+                focusNode: weightFocusNode,
                 //    key: Key,
-                //    readOnly: true,
+                    readOnly: true,
                 // enabled: false,
                 controller: textWeightController,
                 keyboardType: TextInputType.number,
@@ -101,8 +121,9 @@ class _HomeState extends State<Home> {
                   width: 200,
                   height: 50,
                   child: TextField(
+                    focusNode: heightFocusNode,
                     keyboardType: TextInputType.number,
-                    //    readOnly: true,
+                        readOnly: true,
                     //  enabled: false,
                     controller: textHeightController,
                     maxLines: 1,
